@@ -11,6 +11,14 @@ public class Produto {
 		this.preco = preco;
 	}
 	
+	public double getPreco() {
+		return this.preco;
+	}
+	
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(fabricante, nome);
@@ -27,4 +35,10 @@ public class Produto {
 		Produto other = (Produto) obj;
 		return Objects.equals(fabricante, other.fabricante) && Objects.equals(nome, other.nome);
 	}
+
+	@Override
+	public String toString() {
+		return this.nome + " " + this.fabricante + " por apenas R$" + this.preco;
+	}
 }
+
