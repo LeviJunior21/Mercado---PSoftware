@@ -11,17 +11,9 @@ public class Produto {
 		this.preco = preco;
 	}
 	
-	public double getPreco() {
-		return this.preco;
-	}
-	
-	public void setPreco(double preco) {
-		this.preco = preco;
-	}
-	
 	@Override
 	public int hashCode() {
-		return Objects.hash(fabricante, nome);
+		return this.nome.hashCode() + this.fabricante.hashCode();
 	}
 	
 	@Override
@@ -32,8 +24,8 @@ public class Produto {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Produto other = (Produto) obj;
-		return Objects.equals(fabricante, other.fabricante) && Objects.equals(nome, other.nome);
+		Produto produto = (Produto) obj;
+		return this.nome.equals(produto.nome);
 	}
 
 	@Override

@@ -9,12 +9,14 @@ public class MercadoServices {
 	
 	public void criaProduto(String nome, String fabricante, double preco) {
 		Produto produto = new Produto(nome, fabricante, preco);
-		this.repositorio.addProduto(nome, produto);
+		this.repositorio.addProduto(produto);
 	}
 
-	public void criaLote(String nome, Date data, int quantidade) {
-		Lote lote = new Lote(this.repositorio.getProduto(nome), data, quantidade);
-		this.repositorio.addLote(nome, lote);
+	public void criaLote(int codigoProduto, Date data, int quantidade) {
+		if (this.repositorio.existeProduto(codigoProduto)) {
+			Lote lote = new Lote(this.repositorio.getProduto(codigoProduto), data, quantidade);
+			this.repositorio.addLote(lote);
+		}
 	}
 
 }

@@ -10,21 +10,9 @@ public class Lote {
 		this.data = data;
 		this.quantidade = quantidade;
 	}
-	
-	public int getQuantidade() {
-		return this.quantidade;
-	}
-	
-	public int setQuantidade() {
-		return this.quantidade;
-	}
-	
-	public boolean venderProduto() {
-		if (this.quantidade > 0) {
-			this.quantidade -= 1;
-			return true;
-		}
-		return false;
-	}
 
+	@Override
+	public int hashCode() {
+		return this.produto.hashCode() + this.data.hashCode() + this.quantidade;
+	}
 }

@@ -27,7 +27,7 @@ public class main {
 	
 	private static void criaLote(MercadoFachada fachada, Scanner sc) {
 		System.out.println("\nNome do produto: ");
-		String nome = sc.next();
+		int codigoProduto = sc.nextInt();
 		System.out.println("\nData de vencimento: ");
 		String vencimento = sc.next();
 		System.out.println("\nQuantidade: ");
@@ -37,7 +37,7 @@ public class main {
 		Date data;
 		try {
 			data = format.parse(vencimento);
-			fachada.criaLote(nome, data, quantidade);
+			fachada.criaLote(codigoProduto, data, quantidade);
 		} catch (ParseException e) {
 			System.out.println("Ocorreu um erro na data: " + e.getMessage());
 		}

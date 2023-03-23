@@ -7,12 +7,12 @@ public class MercadoFachada {
 		this.services = new MercadoServices();
 	}
 	
-	public void criaProduto(String nome, String fabricante, double preco) {
-		this.services.criaProduto(nome, fabricante, preco);
+	public void criaProduto(String nomeProduto, String fabricante, double preco) {
+		this.services.criaProduto(nomeProduto, fabricante, preco);
 	}
 	
-	public void criaLote(String nome, Date data, int quantidade) {
-		this.services.criaLote(nome, data, quantidade);
+	public void criaLote(int codigoProduto, Date data, int quantidade) {
+		this.services.criaLote(codigoProduto, data, quantidade);
 	}
 	
 }
